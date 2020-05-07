@@ -1,0 +1,22 @@
+{
+  "name": "serverless-cf-parameters",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/otani-sg/serverless-cf-parameters.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/otani-sg/serverless-cf-parameters/issues"
+  },
+  "homepage": "https://github.com/otani-sg/serverless-cf-parameters#readme",
+  "dependencies": {
+    "yargs-parser": "^18.1.3"
+  }
+}
