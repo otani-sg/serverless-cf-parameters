@@ -78,6 +78,10 @@ module.exports = class CfParametersPlugin {
             parameterOverrides = [parameterOverrides]
         }
         
-        return parseArgs(parameterOverrides.map(param => `--${param}`).join(' '))
+        return parseArgs(
+            parameterOverrides.map(param => `--${param}`).join(' '),
+            // Do not attempt to auto-convert numbers, since CF parameters' values are always string
+            {configuration: {'parse-numbers': false}}
+        )
     }
 }
