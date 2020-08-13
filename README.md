@@ -1,6 +1,6 @@
 # CloudFormation Parameters Plugin for Serverless
 
-Serverless plugin for setting CloudFormation parameters values using same `--parameter-overrides` flag with AWS CLI.
+Serverless plugin for setting CloudFormation parameters values using the same `--parameter-overrides` flag that AWS CLI uses
 
 ## Install
 

@@ -1,7 +1,7 @@
 {
-  "name": "serverless-cf-parameters",
-  "version": "0.1.0",
-  "description": "",
+  "name": "@otani-sg/serverless-cf-parameters",
+  "version": "0.9.0",
+  "description": "Serverless plugin for setting CloudFormation parameters values using the same `--parameter-overrides` flag that AWS CLI uses",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
