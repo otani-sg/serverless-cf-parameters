@@ -18,5 +18,8 @@
   "homepage": "https://github.com/otani-sg/serverless-cf-parameters#readme",
   "dependencies": {
     "yargs-parser": "^18.1.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
