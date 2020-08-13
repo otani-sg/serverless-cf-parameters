@@ -5,13 +5,7 @@ Serverless plugin for setting CloudFormation parameters values using the same `-
 ## Install
 
 ```bash
-$ npm i -D https://github.com/otani-sg/serverless-cf-parameters.git
-```
-
-```yaml
-# serverless.yaml
-plugins:
-- serverless-cf-parameters
+$ sls plugin install -n @otani.sg/serverless-cf-parameters
 ```
 
 ## Usage
