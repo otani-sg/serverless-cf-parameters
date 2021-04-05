@@ -1,4 +1,5 @@
 let parseArgs = require('yargs-parser')
+const OPTION_PARAMETER_OVERRIDES = 'parameter-overrides'
 
 module.exports = class CfParametersPlugin {
     constructor (serverless, options) {
@@ -8,7 +9,7 @@ module.exports = class CfParametersPlugin {
         this.commands = {
             deploy: {
                 options: {
-                    'parameter-overrides': {
+                    [OPTION_PARAMETER_OVERRIDES]: {
                         usage: 'Update the cloudformation parameters\' values',
                         required: false
                     }
@@ -68,12 +69,12 @@ module.exports = class CfParametersPlugin {
     
     getOverrides () {
         // Return early
-        if (!this.options.parameterOverrides) {
+        if (!this.options[OPTION_PARAMETER_OVERRIDES]) {
             return {}
         }
         
         // Normalize values into array
-        let parameterOverrides = this.options.parameterOverrides
+        let parameterOverrides = this.options[OPTION_PARAMETER_OVERRIDES]
         if (!Array.isArray(parameterOverrides)) {
             parameterOverrides = [parameterOverrides]
         }
