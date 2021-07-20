@@ -11,7 +11,8 @@ module.exports = class CfParametersPlugin {
                 options: {
                     [OPTION_PARAMETER_OVERRIDES]: {
                         usage: 'Update the cloudformation parameters\' values',
-                        required: false
+                        required: false,
+                        type: String
                     }
                 }
             }
