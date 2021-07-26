@@ -1,6 +1,6 @@
 {
   "name": "@otani.sg/serverless-cf-parameters",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Serverless plugin for setting CloudFormation parameters values using the same `--parameter-overrides` flag that AWS CLI uses",
   "main": "index.js",
   "scripts": {
