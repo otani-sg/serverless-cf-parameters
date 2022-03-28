@@ -1,6 +1,8 @@
 # CloudFormation Parameters Plugin for Serverless
 
-[![npm (scoped)](https://img.shields.io/npm/v/@otani.sg/serverless-cf-parameters)](https://www.npmjs.com/package/@otani.sg/serverless-cf-parameters) ![NPM](https://img.shields.io/npm/l/@otani.sg/serverless-cf-parameters)
+[![npm (scoped)](https://img.shields.io/npm/v/@otani.sg/serverless-cf-parameters)](https://www.npmjs.com/package/@otani.sg/serverless-cf-parameters)
+[![npm](https://img.shields.io/npm/dw/@otani.sg/serverless-cf-parameters)](https://www.npmjs.com/package/@otani.sg/serverless-cf-parameters)
+[![NPM](https://img.shields.io/npm/l/@otani.sg/serverless-cf-parameters)](https://www.npmjs.com/package/@otani.sg/serverless-cf-parameters)
 
 Serverless plugin for setting CloudFormation parameters values using the same `--parameter-overrides` flag that AWS CLI uses
 
