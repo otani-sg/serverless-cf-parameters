@@ -13,7 +13,7 @@ module.exports = class CfParametersPlugin {
                         usage: 'Update the cloudformation parameters\' values',
                         required: false,
                         // support multiple option of command
-                        type: 'string[]'
+                        type: 'multiple'
                     }
                 }
             }
