@@ -64,7 +64,7 @@ module.exports = class CfParametersPlugin {
     }
 
     preventSkippingDeployment () {
-        if (this.options.parameterOverrides) {
+        if (this.options[OPTION_PARAMETER_OVERRIDES]) {
             if (this.serverless.service.provider.shouldNotDeploy === true) {
                 this.serverless.service.provider.shouldNotDeploy = false
                 this.serverless.cli.log('Cloudformation parameters\' values specified. Reversed skipping deployment decision.')
