@@ -21,9 +21,6 @@ module.exports = class CfParametersPlugin {
         this.providerRequest = this.provider.request.bind(this.provider)
 
         this.hooks = {
-            // this command for Serverless Framework from version 2.* and earlier
-            'before:deploy:deploy': this.interceptProviderRequest.bind(this),
-            // this command for Serverless Framework from version 3.* onwards
             'before:aws:deploy:deploy:updateStack': this.interceptProviderRequest.bind(this),
             'aws:deploy:deploy:checkForChanges': this.preventSkippingDeployment.bind(this)
         }
@@ -59,7 +56,7 @@ module.exports = class CfParametersPlugin {
                 }).filter(_ => _)
             }
 
-            return await this.providerRequest(...args)
+            return this.providerRequest(...args)
         }
     }
 
