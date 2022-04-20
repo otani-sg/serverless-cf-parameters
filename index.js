@@ -12,7 +12,8 @@ module.exports = class CfParametersPlugin {
                     [OPTION_PARAMETER_OVERRIDES]: {
                         usage: 'Update the cloudformation parameters\' values',
                         required: false,
-                        type: 'string'
+                        // support multiple option of command
+                        type: 'multiple'
                     }
                 }
             }
@@ -20,7 +21,10 @@ module.exports = class CfParametersPlugin {
         this.providerRequest = this.provider.request.bind(this.provider)
 
         this.hooks = {
+            // this command for Serverless Framework from version 2.* and earlier
             'before:deploy:deploy': this.interceptProviderRequest.bind(this),
+            // this command for Serverless Framework from version 3.* onwards
+            'before:aws:deploy:deploy:updateStack': this.interceptProviderRequest.bind(this),
             'aws:deploy:deploy:checkForChanges': this.preventSkippingDeployment.bind(this)
         }
     }
@@ -30,7 +34,7 @@ module.exports = class CfParametersPlugin {
             let [service, method, params] = args
             let compiledParametersTemplate = this.serverless.service.provider.compiledCloudFormationTemplate.Parameters || {}
 
-            if (service === 'CloudFormation' && method === 'updateStack') {
+            if (service === 'CloudFormation' && (method === 'updateStack' || method === 'createChangeSet')) {
                 // Get list of parameters in currently deployed template
                 let response = await this.providerRequest('CloudFormation', 'getTemplate', {StackName: params.StackName})
                 let currentParameters = JSON.parse(response.TemplateBody).Parameters || {}
